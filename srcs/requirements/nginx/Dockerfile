@@ -8,7 +8,7 @@ EXPOSE 443
 RUN apt update -y && \
 	apt upgrade -y &&  \
 	apt install nginx -y && \
-	apt install ssl -y
+	apt install openssl -y
 
 #clean Docker afeter install all depandace
 RUN apt clean && rm -rf /var/lib/apt/lists/*

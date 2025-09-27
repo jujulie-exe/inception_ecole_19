@@ -21,6 +21,7 @@ RUN apt clean && rm -rf /var/lib/apt/lists/*
 #clean add config for worpress
 COPY config_wordpress.sh .
 RUN chmod 777 config_wordpress.sh 
+RUN chmod 777 usr/share/wordpress
 ENTRYPOINT ["/bin/bash", "./config_wordpress.sh"]
 
 

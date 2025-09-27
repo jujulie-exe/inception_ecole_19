@@ -12,7 +12,7 @@ COPY init_mariabd.sh .
 
 #clean Docker afeter install all depandace
 RUN apt clean && rm -rf /var/lib/apt/lists/*
-RUN service mariadb start
+#RUN service mariadb start
 RUN chmod 777 init_mariabd.sh
 
 ENTRYPOINT ["./init_mariabd.sh"]

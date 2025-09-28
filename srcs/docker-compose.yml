@@ -1,4 +1,3 @@
-
 services:
   mariadb:
     container_name: mariadb
@@ -53,8 +52,9 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: volume/wordpress
+      device: /home/jfranco/wordpress
         #/home/jfranco
+        # ✘ Container mariadb       Error response from daemon: failed to populate volume: error while mounting volume '/var/lib/docker/volumes/srcs_mariadb/_data': failed to mount local volume: mount /home/lilith/inception/srcs/home/jfranco/mariadb:/var/lib/docker/volumes/srcs_mariadb/_data, flags: 0x1000: no such file or directory
 
 
   mariadb:
@@ -62,7 +62,7 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: volume/mariadb
+      device: /home/jfranco/mariadb
 
 networks:
   inception:

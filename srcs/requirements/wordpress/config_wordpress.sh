@@ -12,8 +12,8 @@ define('DB_PASSWORD', '${SQL_PASS}');        // password MariaDB
 define('DB_HOST', 'mariadb');                  // hostname o container name DB
 
 // URL del sito
-define('WP_HOME', 'https://localhost:8080');
-define('WP_SITEURL', 'https://localhost:8080');
+define('WP_HOME', 'https://127.0.0.1');
+define('WP_SITEURL', 'https://127.0.0.1');
 
 // Impostazioni extra consigliate
 define('FS_METHOD', 'direct');
@@ -28,7 +28,7 @@ EFO
 cat /etc/wordpress/config-default.php 
 env
 wp core version  --path=/usr/share/wordpress --allow-root
-wp core install --allow-root --path=/usr/share/wordpress --url="https://localhost:8080" --title="test" --admin_user="admin" --admin_password="password" --admin_email="email@example.com"
+wp core install --allow-root --path=/usr/share/wordpress --url="https://127.0.0.1:8080" --title="test" --admin_user="admin" --admin_password="password" --admin_email="email@example.com"
 wp user create --allow-root bob bob@example.com --role=author --path=/usr/share/wordpress 
 #service php8.4-fpm shutdown
 #killall php8.4-fpm

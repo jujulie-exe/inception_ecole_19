@@ -33,7 +33,6 @@ wp user create --allow-root bob bob@example.com --role=author --path=/usr/share/
 #service php8.4-fpm shutdown
 #killall php8.4-fpm
 sleep 1
-export HTTP_HOST="https://localhost:8080"
 echo "avvio php8.4"
 #root@9743c0077094:/# killall /usr/sbin/php-fpm8.4
 #root@9743c0077094:/# /usr/sbin/php-fpm8.4 -F

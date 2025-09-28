@@ -28,8 +28,9 @@ EFO
 cat /etc/wordpress/config-default.php 
 env
 wp core version  --path=/usr/share/wordpress --allow-root
-wp core install --allow-root --path=/usr/share/wordpress --url="https://127.0.0.1:8080" --title="test" --admin_user="admin" --admin_password="password" --admin_email="email@example.com"
-wp user create --allow-root bob bob@example.com --role=author --path=/usr/share/wordpress 
+wp core install --allow-root --path=/usr/share/wordpress --url="https://127.0.0.1" --title="jfranco" --admin_user="${USER_ADMIN}" --admin_password="${PASS_ADMIN}" --admin_email="${MAIL_ADMIN}"
+wp user create --allow-root "${USER_NAME}" "${USER_MAIL}" --role=author --path=/usr/share/wordpress
+
 #service php8.4-fpm shutdown
 #killall php8.4-fpm
 sleep 1

@@ -1,5 +1,6 @@
 services:
   mariadb:
+    init: true
     container_name: mariadb
     networks:
       - inception
@@ -12,6 +13,12 @@ services:
     restart: unless-stopped
     expose:
       - "3306"
+    healthcheck:
+        test: ["CMD", "mysql", "-u", "${DOCKER_USR_SQL}", "-p${DOCKER_PASS_SQL}", "-e", "SELECT 1"]
+        start_period: 10s
+        interval: 10s
+        timeout: 5s
+        retries: 3
     # healthcheck da aggiungere
 
   nginx:
@@ -33,7 +40,8 @@ services:
   wordpress:
     container_name: wordpress
     depends_on:
-      - mariadb
+      mariadb:
+        condition: service_healthy
     networks:
       - inception
     build:

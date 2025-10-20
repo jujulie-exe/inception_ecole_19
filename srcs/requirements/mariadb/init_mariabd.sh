@@ -11,7 +11,7 @@ EOF
 echo "Start mariaDB"
 service mariadb start
 
-sleep 6
+sleep 3
 
 
 mariadb -u root << EOF

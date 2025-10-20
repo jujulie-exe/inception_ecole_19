@@ -1,6 +1,6 @@
 
 #!/bin/bash
-sleep 30
+#sleep 10
 echo "Start init wordpress"
 
 cat > /etc/wordpress/config-default.php << EOF
